@@ -31,63 +31,48 @@
         </div>
       </div>
 
-      <!-- Box 3: Recent Trades (Matrix Code) -->
+      <!-- Box 3: Recent Trades -->
       <div class="box" id="box3">
-        <canvas id="matrixCanvas"></canvas>
+        <div class="content">
+          <h1>Recent Trades</h1>
+          <table class="trade-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Ticker</th>
+                <th>Action</th>
+                <th>Price</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2025-07-05</td>
+                <td>NVDA</td>
+                <td>Buy</td>
+                <td>$124.50</td>
+                <td>High-volume breakout</td>
+              </tr>
+              <tr>
+                <td>2025-07-03</td>
+                <td>AAPL</td>
+                <td>Sell</td>
+                <td>$205.75</td>
+                <td>Hit stop-loss</td>
+              </tr>
+              <!-- Add more rows as needed -->
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
 
-    <!-- Bottom Row (placeholders for now) -->
+    <!-- Bottom Row (placeholders) -->
     <div class="row">
       <div class="box" id="box4">Box 4</div>
       <div class="box" id="box5">Box 5</div>
       <div class="box" id="box6">Box 6</div>
     </div>
   </div>
-
-  <!-- Matrix Effect Script -->
-  <script>
-    const canvas = document.getElementById('matrixCanvas');
-    const ctx = canvas.getContext('2d');
-
-    function resizeCanvas() {
-      canvas.width = canvas.parentElement.clientWidth;
-      canvas.height = canvas.parentElement.clientHeight;
-    }
-
-    resizeCanvas();
-
-    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    const fontSize = 14;
-    let columns = canvas.width / fontSize;
-    const drops = Array(Math.floor(columns)).fill(1);
-
-    function drawMatrix() {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      ctx.fillStyle = '#0F0';
-      ctx.font = fontSize + 'px monospace';
-
-      for (let i = 0; i < drops.length; i++) {
-        const text = letters[Math.floor(Math.random() * letters.length)];
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-        if (drops[i] * fontSize > canvas.height || Math.random() > 0.975) {
-          drops[i] = 0;
-        }
-
-        drops[i]++;
-      }
-    }
-
-    setInterval(drawMatrix, 40);
-    window.addEventListener('resize', () => {
-      resizeCanvas();
-      columns = canvas.width / fontSize;
-      drops.length = Math.floor(columns);
-      drops.fill(1);
-    });
-  </script>
 </body>
 </html>
