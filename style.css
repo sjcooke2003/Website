@@ -31,6 +31,7 @@ html, body {
   min-height: 33vh;
   position: relative;
   overflow: hidden;
+  padding: 10px;
 }
 
 .box:hover {
@@ -42,8 +43,10 @@ html, body {
   text-align: center;
   padding: 20px;
   z-index: 1;
+  width: 100%;
 }
 
+/* Resume links */
 #box2 a {
   display: block;
   margin: 8px 0;
@@ -55,14 +58,27 @@ html, body {
   text-decoration: underline;
 }
 
-/* Matrix canvas fills entire box */
-#matrixCanvas {
+/* Trade Table Styles */
+.trade-table {
   width: 100%;
-  height: 100%;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.trade-table th,
+.trade-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  font-size: 0.9em;
+}
+
+.trade-table th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.trade-table tr:nth-child(even) {
+  background-color: #f9f9f9;
 }
 
 /* Responsive behavior for smaller screens */
@@ -78,5 +94,14 @@ html, body {
   .box {
     width: 100%;
     height: 100vh;
+  }
+
+  .trade-table {
+    font-size: 0.8em;
+  }
+
+  .trade-table th,
+  .trade-table td {
+    padding: 6px;
   }
 }
