@@ -1,63 +1,93 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="style.css">
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>6-Section Layout</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html, body {
-      height: 100%;
-      font-family: sans-serif;
-    }
-
-    .container {
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-    }
-
-    .row {
-      flex: 1;
-      display: flex;
-    }
-
-    .box {
-      flex: 1;
-      border: 1px solid #ccc;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #f9f9f9;
-    }
-
-    /* Optional: add hover for interactivity */
-    .box:hover {
-      background-color: #e0f7fa;
-      cursor: pointer;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>6-Section Website</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
     <!-- Top Row -->
     <div class="row">
-      <div class="box" id="box1">Box 1</div>
-      <div class="box" id="box2">Box 2</div>
-      <div class="box" id="box3">Box 3</div>
+      <!-- Box 1: About -->
+      <div class="box" id="box1">
+        <div class="content">
+          <h1>About Me</h1>
+          <p>Welcome to my site. Here you’ll find information about who I am, what I do, and what this site is for.</p>
+        </div>
+      </div>
+
+      <!-- Box 2: Resume -->
+      <div class="box" id="box2">
+        <div class="content">
+          <h1>Resume & Downloads</h1>
+          <a href="files/resume.pdf" download>Download Resume</a>
+          <ul>
+            <li><a href="files/sample1.pdf" download>File 1</a></li>
+            <li><a href="files/sample2.pdf" download>File 2</a></li>
+            <li><a href="files/sample3.pdf" download>File 3</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Box 3: Recent Trades (Matrix Code) -->
+      <div class="box" id="box3">
+        <canvas id="matrixCanvas"></canvas>
+      </div>
     </div>
-    <!-- Bottom Row -->
+
+    <!-- Bottom Row (placeholders for now) -->
     <div class="row">
       <div class="box" id="box4">Box 4</div>
       <div class="box" id="box5">Box 5</div>
       <div class="box" id="box6">Box 6</div>
     </div>
   </div>
+
+  <!-- Matrix Effect Script -->
+  <script>
+    const canvas = document.getElementById('matrixCanvas');
+    const ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+      canvas.width = canvas.parentElement.clientWidth;
+      canvas.height = canvas.parentElement.clientHeight;
+    }
+
+    resizeCanvas();
+
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    const fontSize = 14;
+    let columns = canvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+
+    function drawMatrix() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = '#0F0';
+      ctx.font = fontSize + 'px monospace';
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height || Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+
+        drops[i]++;
+      }
+    }
+
+    setInterval(drawMatrix, 40);
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+      columns = canvas.width / fontSize;
+      drops.length = Math.floor(columns);
+      drops.fill(1);
+    });
+  </script>
 </body>
 </html>
