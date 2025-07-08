@@ -1,3 +1,4 @@
+/* Global Reset and Base Styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,30 +9,34 @@ html, body {
   height: 100%;
   font-family: sans-serif;
   overflow-x: hidden;
+  background-color: #f5f5f5;
+  color: #333;
 }
 
+/* Layout Container */
 .container {
   display: flex;
   flex-direction: column;
   height: 100vh;
 }
 
+/* Row: each half of the screen */
 .row {
   flex: 1;
   display: flex;
+  width: 100%;
 }
 
+/* Box: individual sections */
 .box {
   flex: 1;
-  border: 1px solid #ccc;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f9f9f9;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
   min-height: 33vh;
-  position: relative;
   overflow: hidden;
-  padding: 10px;
+  transition: background-color 0.3s ease;
 }
 
 .box:hover {
@@ -39,24 +44,18 @@ html, body {
   cursor: pointer;
 }
 
-.content {
-  text-align: center;
-  padding: 20px;
-  z-index: 1;
-  width: 100%;
-}
-
+/* Title Bar at top of each box */
 .title-bar {
-  background-color: #333;
-  color: white;
-  font-weight: bold;
+  background-color: #222;
+  color: #fff;
   padding: 12px;
+  font-weight: bold;
   text-align: center;
-  font-size: 1.2em;
-  width: 100%;
-  border-bottom: 1px solid #222;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #111;
 }
 
+/* Content inside the box */
 .content {
   padding: 20px;
   text-align: center;
@@ -64,12 +63,13 @@ html, body {
   overflow-y: auto;
 }
 
-/* Resume links */
+/* Resume download links */
 #box2 a {
   display: block;
   margin: 8px 0;
   color: #007bff;
   text-decoration: none;
+  font-weight: 500;
 }
 
 #box2 a:hover {
@@ -81,13 +81,14 @@ html, body {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
+  font-size: 0.95em;
 }
 
 .trade-table th,
 .trade-table td {
   border: 1px solid #ccc;
-  padding: 8px;
-  font-size: 0.9em;
+  padding: 10px;
+  text-align: center;
 }
 
 .trade-table th {
@@ -99,7 +100,7 @@ html, body {
   background-color: #f9f9f9;
 }
 
-/* Responsive behavior for smaller screens */
+/* Responsive Design for Mobile */
 @media (max-width: 768px) {
   .container {
     height: auto;
@@ -115,11 +116,11 @@ html, body {
   }
 
   .trade-table {
-    font-size: 0.8em;
+    font-size: 0.85em;
   }
 
   .trade-table th,
   .trade-table td {
-    padding: 6px;
+    padding: 8px;
   }
 }
