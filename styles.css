@@ -1,51 +1,3 @@
-/* Reset and global styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Helvetica Neue', sans-serif;
-  line-height: 1.6;
-  background-color: #f9f9f9;
-  color: #333;
-}
-
-a {
-  color: #66ccff;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Header */
-header {
-  background-color: #000;
-  color: #fff;
-  padding: 20px 40px;
-  text-align: center;
-}
-
-header h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-}
-
-nav {
-  margin-top: 10px;
-}
-
-nav a {
-  color: #fff;
-  margin: 0 15px;
-  font-weight: bold;
-  font-size: 1rem;
-}
-
 /* Contact Page */
 .contact-main {
   display: flex;
@@ -68,31 +20,33 @@ nav a {
 .profile-pic {
   width: 120px;
   height: 120px;
-  border-radius: 50%;
   margin-right: 30px;
   object-fit: cover;
+  /* Removed border-radius to keep square shape */
   border: 2px solid #fff;
 }
 
-.contact-info h2 {
+/* Optional class if you want to keep round vs square logic */
+.profile-pic.square {
+  border-radius: 0;
+}
+
+.contact-info h2.name {
   font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   color: #fff;
+}
+
+.contact-info h3.title {
+  font-size: 1.1rem;
+  font-weight: normal;
+  margin-bottom: 15px;
+  color: #ccc;
 }
 
 .contact-info p {
   font-size: 1rem;
   margin-bottom: 8px;
   color: #ccc;
-}
-
-/* Footer */
-footer {
-  background-color: #eee;
-  padding: 20px;
-  font-size: 0.9rem;
-  text-align: center;
-  color: #555;
-  border-top: 1px solid #ccc;
 }
