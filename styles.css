@@ -1,0 +1,93 @@
+/* Reset some basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 40px;
+    text-align: center;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.quotron-placeholder {
+    background-color: #222;
+    color: #ccc;
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+}
+
+main {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.mission h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.mission p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.intro-paragraph p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.image-placeholder {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.image-placeholder img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+footer {
+    background-color: #eee;
+    padding: 20px;
+    font-size: 0.9rem;
+    text-align: center;
+    color: #555;
+    border-top: 1px solid #ccc;
+}
