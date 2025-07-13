@@ -1,142 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>6-Section Website</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooke Capital LLC</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <!-- Top Row -->
-    <div class="row">
-      <!-- Box 1: About -->
-      <div class="box" id="box1">
-        <div class="title-bar">About Me</div>
-        <div class="content">
-          <p>Welcome to my site. Here you’ll find information about who I am, what I do, and what this site is for.</p>
-        </div>
-      </div>
+    <header>
+        <h1>Cooke Capital LLC</h1>
+        <nav>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
 
-      <!-- Box 2: Resume -->
-      <div class="box" id="box2">
-        <div class="title-bar">Resume & Downloads</div>
-        <div class="content">
-          <a href="files/resume.pdf" download>Download Resume</a>
-          <ul>
-            <li><a href="files/sample1.pdf" download>File 1</a></li>
-            <li><a href="files/sample2.pdf" download>File 2</a></li>
-            <li><a href="files/sample3.pdf" download>File 3</a></li>
-          </ul>
-        </div>
-      </div>
+    <section class="quotron-placeholder">
+        <!-- Reserved space for stock quotron -->
+        <p>Quotron Ticker Coming Soon...</p>
+    </section>
 
-      <!-- Box 3: Recent Trades -->
-      <div class="box" id="box3">
-        <div class="title-bar">Recent Trades</div>
-        <div class="content">
-          <table class="trade-table">
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>Ticker</th>
-                <th>Action</th>
-                <th>QTY</th>
-                <th>Price</th>
-                <th>Notes</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Jul-09-2025</td>
-                <td>Call (NVDA) Aug-01-2025 $165</td>
-                <td>Sell</td>
-                <td>1</td>
-                <td>$5.43</td>
-                <td>Target hit</td>
-              </tr>
-              <tr>
-                <td>Jul-09-2025</td>
-                <td>Call (NVDA) Aug-15-2025 $165</td>
-                <td>Sell</td>
-                <td>1</td>
-                <td>$13.45</td>
-                <td>Target hit</td>
-              </tr>
-              <tr>
-                <td>Jul-03-2025</td>
-                <td>Call (NVDA) Aug-01-2025 $165</td>
-                <td>Buy</td>
-                <td>1</td>
-                <td>$4.08</td>
-                <td>Prep for a fast move</td>
-              </tr>
-              <tr>
-                <td>Jul-01-2025</td>
-                <td>Call (NVDA) Aug-15-2025 $155</td>
-                <td>Buy</td>
-                <td>1</td>
-                <td>$7.70</td>
-                <td>Target $4 trillion market cap</td>
-              </tr>
-              <tr>
-                <td>May-19-2025</td>
-                <td>VOO</td>
-                <td>Sell</td>
-                <td>8</td>
-                <td>$544.52</td>
-                <td>Taking profits</td>
-              </tr>
-              <tr>
-                <td>Apr-24-2025</td>
-                <td>NVDA</td>
-                <td>Buy</td>
-                <td>97</td>
-                <td>$108.92</td>
-                <td>End of tariff sell-off</td>
-              </tr>
-              <tr>
-                <td>Apr-24-2025</td>
-                <td>VOO</td>
-                <td>Buy</td>
-                <td>18</td>
-                <td>$502</td>
-                <td>End of sell-off</td>
-              </tr>
-            </tbody>
-          </table>
+    <main>
+        <section class="mission">
+            <h2>Our Mission</h2>
+            <p>To empower individuals and institutions with intelligent investment strategies, grounded in integrity, transparency, and performance.</p>
+        </section>
 
-          <!-- Disclaimer -->
-          <p class="disclaimer">
-            No investment advice. For educational/informational purposes only.
-          </p>
-        </div>
-      </div>
-    </div>
+        <section class="intro-paragraph">
+            <p>At Cooke Capital LLC, we specialize in bespoke portfolio construction, strategic asset allocation, and disciplined wealth management. Our client-focused approach ensures tailored financial solutions that evolve with your goals.</p>
+        </section>
 
-    <!-- Bottom Row -->
-    <div class="row">
-      <div class="box" id="box4">
-        <div class="title-bar">Box 4</div>
-        <div class="content">
-          <p>Content for box 4.</p>
-        </div>
-      </div>
+        <section class="image-placeholder">
+            <img src="https://via.placeholder.com/800x400" alt="Financial Growth">
+        </section>
+    </main>
 
-      <div class="box" id="box5">
-        <div class="title-bar">Box 5</div>
-        <div class="content">
-          <p>Content for box 5.</p>
-        </div>
-      </div>
-
-      <div class="box" id="box6">
-        <div class="title-bar">Box 6</div>
-        <div class="content">
-          <p>Content for box 6.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+    <footer>
+        <p>Cooke Capital LLC is a Registered Investment Advisor. Information provided is for educational purposes only and is not investment advice. Past performance is not indicative of future results. Member FINRA/SIPC.</p>
+    </footer>
 </body>
 </html>
