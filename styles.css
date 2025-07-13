@@ -1,93 +1,125 @@
-/* Reset some basic styling */
+/* Reset and global styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Helvetica Neue', sans-serif;
-    line-height: 1.6;
-    background-color: #f9f9f9;
-    color: #333;
+  font-family: 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
 }
 
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Header */
 header {
-    background-color: #000;
-    color: #fff;
-    padding: 20px 40px;
-    text-align: center;
+  background-color: #000;
+  color: #fff;
+  padding: 20px 40px;
+  text-align: center;
 }
 
 header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
 nav {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 nav a {
-    color: #fff;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1rem;
+  color: #fff;
+  margin: 0 15px;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
-nav a:hover {
-    text-decoration: underline;
-}
-
+/* Quotron Placeholder */
 .quotron-placeholder {
-    background-color: #222;
-    color: #ccc;
-    text-align: center;
-    padding: 20px;
-    font-style: italic;
+  background-color: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 20px;
+  font-style: italic;
 }
 
+/* Main Content */
 main {
-    padding: 40px 20px;
-    max-width: 900px;
-    margin: auto;
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
 }
 
 .mission h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #111;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #111;
 }
 
 .mission p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
 }
 
 .intro-paragraph p {
-    font-size: 1.1rem;
-    margin-bottom: 30px;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
 }
 
 .image-placeholder {
-    text-align: center;
-    margin-bottom: 50px;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 .image-placeholder img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
+/* Contact Page */
+.contact-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+.contact-box {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.contact-box .profile-pic {
+  border-radius: 50%;
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+/* Footer */
 footer {
-    background-color: #eee;
-    padding: 20px;
-    font-size: 0.9rem;
-    text-align: center;
-    color: #555;
-    border-top: 1px solid #ccc;
+  background-color: #eee;
+  padding: 20px;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #555;
+  border-top: 1px solid #ccc;
 }
