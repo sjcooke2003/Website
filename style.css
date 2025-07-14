@@ -89,12 +89,24 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Mobile Nav Styles */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
+.hamburger {
+  display: none; /* Hidden on desktop by default */
+}
 
+.hamburger {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: bold;
+  background: none;
+  border: none;
+  color: white;
+  margin: 10px auto 0;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Default: hide nav on mobile */
+@media (max-width: 768px) {
   .nav-container {
     display: none;
     flex-direction: column;
@@ -103,6 +115,7 @@ nav a:hover {
     padding: 10px 0;
   }
 
+  /* When .show is added via JavaScript */
   .nav-container.show {
     display: flex;
   }
