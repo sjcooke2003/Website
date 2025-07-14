@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cooke Capital LLC</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+
   <style>
     .form-section {
       background-color: #ffffff;
@@ -64,8 +65,30 @@
       color: #004080;
       text-decoration: underline;
     }
+
+    /* Hide hamburger button by default */
+    .hamburger {
+      display: none;
+    }
+
+    /* Show hamburger on small screens only */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+        font-family: 'Playfair Display', serif;
+        font-size: 1rem;
+        font-weight: bold;
+        background: none;
+        border: none;
+        color: white;
+        margin: 10px auto 0;
+        cursor: pointer;
+        text-align: center;
+      }
+    }
   </style>
 </head>
+
 <body>
   <!-- TradingView Embed -->
   <section class="quotron-placeholder">
@@ -87,7 +110,6 @@
             { "proName": "NASDAQ:AMZN", "title": "AMZN" },
             { "proName": "NASDAQ:NFLX", "title": "NFLX" },
             { "proName": "NYSE:TSM", "title": "TSM" }
-
           ],
           "colorTheme": "dark",
           "isTransparent": true,
@@ -105,11 +127,11 @@
         <span class="main-name">Cooke Capital</span>
         <span class="sub-name">LLC</span>
       </h1>
-  
-      <!-- "More" Button appears only on mobile -->
+
+      <!-- "Menu" only shows on mobile -->
       <button class="hamburger" onclick="toggleMenu()">Menu</button>
     </div>
-  
+
     <nav id="nav-menu" class="nav-container">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -120,10 +142,10 @@
     </nav>
   </header>
 
+  <script>
+    function toggleMenu() {
+      document.getElementById("nav-menu").classList.toggle("show");
+    }
+  </script>
 </body>
-<script>
-  function toggleMenu() {
-    document.getElementById("nav-menu").classList.toggle("show");
-  }
-</script>
 </html>
