@@ -1,38 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cooke Capital </title>
-  <link rel="stylesheet" href="styles.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cooke Capital LLC</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <style>
+    .form-section {
+      background-color: #ffffff;
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: 40px auto;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+      border-radius: 10px;
+    }
+
+    .form-section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    form input,
+    form textarea,
+    form select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 25px;
+      background-color: #004080;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #002f5e;
+    }
+
+    .privacy-note {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .privacy-note a {
+      color: #004080;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
+  <!-- TradingView Embed -->
+  <section class="quotron-placeholder">
+    <div class="quotron-wrapper">
+      <div class="tradingview-widget-container">
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+        {
+          "symbols": [
+            { "proName": "SPX", "title": "S&P 500" },
+            { "proName": "DJI", "title": "Dow Jones" },
+            { "proName": "NDX", "title": "Nasdaq" },
+            { "proName": "VIX", "title": "VIX" },
+            { "proName": "NASDAQ:NVDA", "title": "NVDA" },
+            { "proName": "NASDAQ:AAPL", "title": "AAPL" },
+            { "proName": "NASDAQ:MSFT", "title": "MSFT" },
+            { "proName": "NASDAQ:GOOG", "title": "GOOG" },
+            { "proName": "NASDAQ:TSLA", "title": "TSLA" },
+            { "proName": "NASDAQ:META", "title": "META" },
+            { "proName": "NASDAQ:AMZN", "title": "AMZN" },
+            { "proName": "NASDAQ:NFLX", "title": "NFLX" },
+            { "proName": "NYSE:TSM", "title": "TSM" }
+
+          ],
+          "colorTheme": "dark",
+          "isTransparent": true,
+          "displayMode": "adaptive",
+          "locale": "en"
+        }
+        </script>
+      </div>
+    </div>
+  </section>
+
   <header>
-    <h1>Cooke Capital LLC</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a> 
-      <a href="#">Services</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <h1>
+      <span class="main-name">Cooke Capital</span> <span class="sub-name">LLC</span>
+    </h1>
+    
   </header>
 
-  <section class="quotron-placeholder">
-    <p>Quotron Ticker Coming Soon...</p>
-  </section>
+  
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+    <a href="more.html">More</a>
+    <a href="clientportal.html">Client Portal</a>
+  </nav>
+
 
   <main>
     <section class="mission">
-      <h2>Our Mission</h2>
-      <p>To empower individuals and institutions with intelligent investment strategies, grounded in integrity, transparency, and performance.</p>
+      <h3>Financial Planning and Wealth Management</h3>
+      <h2>Plan with purpose. Invest in your future.</h2>
+      <p>Cooke Capital provides comprehensive financial planning and disciplined investment management designed to help you build, preserve, and grow your wealth over time. We focus on risk-adjusted strategies and long-term alignment to ensure every decision made today supports the future you envision.</p>
+    </section>
+
+    <section class="form-section">
+      <h2>Client Intake Form</h2>
+      <form action="https://formspree.io/f/xkgzwzol" method="POST">
+        <label for="first_name">First Name</label>
+        <input type="text" id="first_name" name="first_name" required>
+
+        <label for="last_name">Last Name</label>
+        <input type="text" id="last_name" name="last_name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone">
+
+        <label for="zip_code">Zip Code</label>
+        <input type="text" id="zip_code" name="zip_code">
+
+        <label for="assets">Investable Assets</label>
+        <input 
+          type="range" 
+          id="assets" 
+          name="assets" 
+          min="0" 
+          max="100" 
+          step="1" 
+          oninput="updateAssetLabel(this.value)"
+        >
+        <p id="assets-value">$1</p>
+
+        <script>
+          function updateAssetLabel(value) {
+            const numericValue = parseInt(value);
+            if (numericValue >= 100) {
+              document.getElementById("assets-value").textContent = "$100,000+";
+            } else {
+              const dollarAmount = numericValue * 1000;
+              document.getElementById("assets-value").textContent = "$" + dollarAmount.toLocaleString();
+            }
+          }
+
+          window.addEventListener("DOMContentLoaded", () => {
+            const slider = document.getElementById("assets");
+            updateAssetLabel(slider.value);
+          });
+        </script>
+
+        <label for="services">What services are you interested in?</label>
+        <select id="services" name="services">
+          <option value="planning">Financial Planning</option>
+          <option value="investment">Investment Management</option>
+          <option value="both">Both</option>
+          <option value="other">Other</option>
+        </select>
+
+        <button type="submit">Submit Information</button>
+
+        <!-- Privacy Notice -->
+        <p class="privacy-note">
+          By submitting this form, you agree to our 
+          <a href="privacy.html" target="_blank">Privacy Policy</a>.
+        </p>
+
+      </form>
     </section>
 
     <section class="intro-paragraph">
-      <p>At Cooke Capital LLC, we specialize in bespoke portfolio construction, strategic asset allocation, and disciplined wealth management. Our client-focused approach ensures tailored financial solutions that evolve with your goals.</p>
-    </section>
-
-    <section class="image-placeholder">
-      <img src="https://via.placeholder.com/800x400" alt="Financial Growth"/>
+      <p>At Cooke Capital, we believe that every financial decision you make today shapes the future you deserve. Our mission is to provide personalized, thoughtful financial planning and investment management rooted in discipline, transparency, and a deep understanding of your unique goals. Whether you’re preparing for retirement, growing your wealth, or seeking access to alternative investments, we tailor strategies that balance risk and reward — helping you build a secure and prosperous tomorrow.</p>
     </section>
   </main>
 
