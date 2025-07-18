@@ -1,3 +1,4 @@
+/* Basic Reset */
 * {
   margin: 0;
   padding: 0;
@@ -6,46 +7,32 @@
 
 body {
   font-family: 'Helvetica Neue', sans-serif;
-  line-height: 1.6;
   background-color: black;
-  color: #333;
+  color: white;
+  overflow-x: hidden;
 
-  /* Hide scrollbar on mobile */
-  scrollbar-width: none;           /* Firefox */
-  -ms-overflow-style: none;        /* IE 10+ */
+  /* Optional: hide scrollbars on mobile */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 body::-webkit-scrollbar {
-  display: none;                   /* Chrome, Edge, Safari */
+  display: none;
 }
 
-/* HEADER */
+/* Company Header */
 header {
-  background-color: #000;
-  color: #fff;
   text-align: center;
-}
-
-.header-top {
-  padding: 20px;
+  padding: 20px 10px;
   background-color: #000;
-  color: #fff;
 }
 
-/* Company Name */
 .company-name {
-  text-align: center;
   font-family: 'Playfair Display', serif;
   font-weight: bold;
   font-size: 3rem;
-  line-height: 1.2;
   color: white;
-  margin: 0;
   white-space: nowrap;
-}
-
-.main-name {
-  font-size: inherit;
 }
 
 .sub-name {
@@ -54,141 +41,69 @@ header {
   margin-left: 5px;
 }
 
-/* "More" Button (Mobile Menu Toggle) */
-.hamburger {
-  display: none;
-  font-family: 'Playfair Display', serif;  /* Match nav buttons */
-  font-size: 1rem;
-  font-weight: bold;
-  background: none;
-  border: none;
-  color: white;
-  margin: 10px auto 0;
-  cursor: pointer;
-  text-align: center;
-}
-
-/* Nav Menu - Default Desktop */
-nav {
-  background-color: #000;
-  color: #fff;
-  padding: 15px;
-  text-align: center;
-}
-
-nav a {
-  font-family: 'Playfair Display', serif;  
-  color: #fff;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1rem;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-.hamburger {
-  display: none; /* Hidden on desktop by default */
-}
-
-.hamburger {
-  font-family: 'Playfair Display', serif;
-  font-size: 1rem;
-  font-weight: bold;
-  background: none;
-  border: none;
-  color: white;
-  margin: 10px auto 0;
-  cursor: pointer;
-  text-align: center;
-}
-
-/* Default: hide nav on mobile */
-@media (max-width: 768px) {
-  .nav-container {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    background-color: #000;
-    padding: 10px 0;
-  }
-
-  /* When .show is added via JavaScript */
-  .nav-container.show {
-    display: flex;
-  }
-
-  .nav-container a {
-    margin: 10px 0;
-    font-size: 1.2rem;
-  }
-
-  nav {
-    padding: 0;
-  }
-}
-
-/* Quotron */
+/* Quotron wrapper */
 .quotron-wrapper {
   background-color: #000;
-  padding: 0px;
+  padding: 0;
 }
 
-/* Main Content */
-main {
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: auto;
+.recent-trades {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  color: white;
 }
 
-.mission h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: #111;
-}
-
-.mission p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-}
-
-.intro-paragraph p {
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-}
-
-.image-placeholder {
+.recent-trades h2 {
+  margin: 40px 0 15px;
+  font-size: 1.5rem;
   text-align: center;
-  margin-bottom: 50px;
 }
 
-.image-placeholder img {
-  max-width: 100%;
-  height: auto;
+.recent-trades table {
+  width: 95%;
+  max-width: 1000px;
+  margin-bottom: 40px;
+  border-collapse: collapse;
+  background-color: #111;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-/* Footer */
-footer {
-  background-color: #eee;
-  padding: 20px;
-  font-size: 0.9rem;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+  font-size: 1rem;
   text-align: center;
-  color: #555;
-  border-top: 1px solid #ccc;
 }
 
-@media (max-width: 768px) {
-  .header-top {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.recent-trades th,
+.recent-trades td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #333;
+}
 
-  .company-name {
-    margin-bottom: 10px;
-  }
+.recent-trades thead {
+  background-color: #222;
+}
+
+/* Buy/Sell Row Colors */
+.recent-trades tr.buy {
+  color: #00ff99;
+}
+
+.recent-trades tr.sell {
+  color: #ff4d4d;
+}
+
+/* P/L Colors */
+.recent-trades td.gain {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.recent-trades td.loss {
+  color: #f44336;
+  font-weight: bold;
+}
+
+.recent-trades td.no-pl {
+  color: #aaa;
 }
