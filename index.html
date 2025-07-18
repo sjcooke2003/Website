@@ -6,87 +6,6 @@
   <title>Cooke Capital LLC</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
-
-  <style>
-    .form-section {
-      background-color: #ffffff;
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: 40px auto;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-      border-radius: 10px;
-    }
-
-    .form-section h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    form label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-    }
-
-    form input,
-    form textarea,
-    form select {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    form button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 25px;
-      background-color: #004080;
-      color: white;
-      font-size: 16px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    form button:hover {
-      background-color: #002f5e;
-    }
-
-    .privacy-note {
-      font-size: 0.9rem;
-      color: #666;
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    .privacy-note a {
-      color: #004080;
-      text-decoration: underline;
-    }
-
-    /* Hide hamburger button by default */
-    .hamburger {
-      display: none;
-    }
-
-    /* Show hamburger on small screens only */
-    @media (max-width: 768px) {
-      .hamburger {
-        display: block;
-        font-family: 'Playfair Display', serif;
-        font-size: 1rem;
-        font-weight: bold;
-        background: none;
-        border: none;
-        color: white;
-        margin: 10px auto 0;
-        cursor: pointer;
-        text-align: center;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -127,24 +46,115 @@
         <span class="main-name">Cooke Capital</span>
         <span class="sub-name">LLC</span>
       </h1>
-
-      <!-- "Menu" only shows on mobile -->
-      <button class="hamburger" onclick="toggleMenu()">Menu</button>
-    </div>
-
-    <nav id="nav-menu" class="nav-container">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact</a>
-      <a href="more.html">More</a>
-      <a href="clientportal.html">Client Portal</a>
-    </nav>
   </header>
+
+  <section class="recent-trades">
+    <h2>Stock Trades</h2>
+    <table class="stock-trades">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Action</th>
+          <th>Ticker</th>
+          <th>Shares</th>
+          <th>Price</th>
+          <th>P/L</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="sell">
+          <td>Jul-17-2025</td>
+          <td>Sell</td>
+          <td>VOO</td>
+          <td>10</td>
+          <td>$575.75</td>
+          <td class="gain">+14.58%</td>
+        </tr>
+        <tr class="sell">
+          <td>May-19-2025</td>
+          <td>Sell</td>
+          <td>VOO</td>
+          <td>8</td>
+          <td>$544.52</td>
+          <td class="gain">+8.36%</td>
+        </tr>
+        <tr class="buy">
+          <td>Apr-24-2025</td>
+          <td>Buy</td>
+          <td>NVDA</td>
+          <td>97</td>
+          <td>$108.92</td>
+          <td class="no-pl">–</td>
+        </tr>
+        <tr class="buy">
+          <td>Apr-24-2025</td>
+          <td>Buy</td>
+          <td>VOO</td>
+          <td>18</td>
+          <td>$502.50</td>
+          <td class="no-pl">–</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <h2>Options Trades</h2>
+    <table class="options-trades">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Action</th>
+          <th>Ticker</th>
+          <th>Type</th>
+          <th>Strike</th>
+          <th>Expiration</th>
+          <th>Price</th>
+          <th>P/L</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="sell">
+          <td>Jul-09-2025</td>
+          <td>Sell</td>
+          <td>NVDA</td>
+          <td>Call</td>
+          <td>$155</td>
+          <td>Aug-15-2025</td>
+          <td>$13.45</td>
+          <td class="gain">+74.68%</td>
+        </tr>
+        <tr class="sell">
+          <td>Jul-09-2025</td>
+          <td>Sell</td>
+          <td>NVDA</td>
+          <td>Call</td>
+          <td>$165</td>
+          <td>Aug-01-2025</td>
+          <td>$5.43</td>
+          <td class="gain">+33.09%</td>
+        </tr>
+        <tr class="buy">
+          <td>Jul-01-2025</td>
+          <td>Buy</td>
+          <td>NVDA</td>
+          <td>Call</td>
+          <td>$155</td>
+          <td>Aug-15-2025</td>
+          <td>$7.70</td>
+          <td class="no-pl">–</td>
+        </tr>
+        <tr class="buy">
+          <td>Jul-03-2025</td>
+          <td>Buy</td>
+          <td>NVDA</td>
+          <td>Call</td>
+          <td>$165</td>
+          <td>Aug-01-2025</td>
+          <td>$4.08</td>
+          <td class="no-pl">–</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
 </body>
-    <script>
-    function toggleMenu() {
-      document.getElementById("nav-menu").classList.toggle("show");
-    }
-  </script>
 </html>
